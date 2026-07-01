@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dumb or Genius - Smart ideas. Dumb ideas. You decide.</title>
+    <meta name="description"
+        content="Post your wildest ideas, vote in two worlds - Genius and Dumb - climb the leaderboards, and find out if the crowd thinks you're a genius or gloriously dumb." />
+    <meta name="theme-color" content="#0d0a1f" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dumb or Genius" />
+    <meta property="og:description"
+        content="Smart ideas. Dumb ideas. You decide. Vote in two worlds and climb the leaderboards." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dog.koungasolutions.co.nz" />
+    <meta property="og:image" content="https://dog.koungasolutions.co.nz/assets/img/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" href="assets/img/logo.png" />
+    <link rel="apple-touch-icon" href="assets/img/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body> <!-- ===== Icon sprite ===== -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="i-brain" viewBox="0 0 24 24">
+                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+                <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+                <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
+                <path d="M6 18a4 4 0 0 1-1.967-.516" />
+                <path d="M19.967 17.484A4 4 0 0 1 18 18" />
+            </symbol>
+            <symbol id="i-smile" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                <line x1="9" x2="9.01" y1="9" y2="9" />
+                <line x1="15" x2="15.01" y1="9" y2="9" />
+            </symbol>
+            <symbol id="i-bulb" viewBox="0 0 24 24">
+                <path
+                    d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+                <path d="M9 18h6" />
+                <path d="M10 22h4" />
+            </symbol>
+            <symbol id="i-vote" viewBox="0 0 24 24">
+                <path d="m9 12 2 2 4-4" />
+                <path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z" />
+                <path d="M22 19H2" />
+            </symbol>
+            <symbol id="i-flame" viewBox="0 0 24 24">
+                <path
+                    d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+            </symbol>
+            <symbol id="i-trophy" viewBox="0 0 24 24">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                <path d="M4 22h16" />
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+            </symbol>
+            <symbol id="i-medal" viewBox="0 0 24 24">
+                <path
+                    d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15" />
+                <path d="M11 12 5.12 2.2" />
+                <path d="m13 12 5.88-9.8" />
+                <path d="M8 7h8" />
+                <circle cx="12" cy="17" r="5" />
+                <path d="M12 18v-2h-.5" />
+            </symbol>
+            <symbol id="i-unlock" viewBox="0 0 24 24">
+                <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 9.9-1" />
+            </symbol>
+            <symbol id="i-eye" viewBox="0 0 24 24">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+            </symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24">
+                <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                <path d="m9 12 2 2 4-4" />
+            </symbol>
+            <symbol id="i-palette" viewBox="0 0 24 24">
+                <circle cx="13.5" cy="6.5" r=".8" fill="currentColor" stroke="none" />
+                <circle cx="17.5" cy="10.5" r=".8" fill="currentColor" stroke="none" />
+                <circle cx="8.5" cy="7.5" r=".8" fill="currentColor" stroke="none" />
+                <circle cx="6.5" cy="12.5" r=".8" fill="currentColor" stroke="none" />
+                <path
+                    d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.555C21.965 6.012 17.461 2 12 2z" />
+            </symbol>
+            <symbol id="i-rocket" viewBox="0 0 24 24">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91 0z" />
+                <path
+                    d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+            </symbol>
+            <symbol id="i-flag" viewBox="0 0 24 24">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                <line x1="4" x2="4" y1="22" y2="15" />
+            </symbol>
+            <symbol id="i-ban" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m4.9 4.9 14.2 14.2" />
+            </symbol>
+            <symbol id="i-lock" viewBox="0 0 24 24">
+                <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </symbol>
+            <symbol id="i-star" viewBox="0 0 24 24">
+                <path
+                    d="M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2.1 2.1 0 0 0 1.6 1.15l5.16.76a.53.53 0 0 1 .3.9l-3.74 3.64a2.1 2.1 0 0 0-.6 1.88l.88 5.14a.53.53 0 0 1-.77.56l-4.62-2.43a2.1 2.1 0 0 0-1.97 0L6.8 21a.53.53 0 0 1-.77-.56l.88-5.14a2.1 2.1 0 0 0-.6-1.88L2.55 9.8a.53.53 0 0 1 .3-.9l5.16-.76A2.1 2.1 0 0 0 9.6 7z" />
+            </symbol>
+            <symbol id="i-crown" viewBox="0 0 24 24">
+                <path
+                    d="M11.56 3.27a.5.5 0 0 1 .88 0l2.95 5.6a1 1 0 0 0 1.52.3l4.28-3.67a.5.5 0 0 1 .8.52l-2.84 10.25a1 1 0 0 1-.95.73H5.8a1 1 0 0 1-.96-.73L2.02 6.02a.5.5 0 0 1 .8-.52l4.28 3.66a1 1 0 0 0 1.51-.29z" />
+                <path d="M5 21h14" />
+            </symbol>
+            <symbol id="i-sprout" viewBox="0 0 24 24">
+                <path d="M7 20h10" />
+                <path d="M10 20c5.5-2.5.8-6.4 3-10" />
+                <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" />
+                <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" />
+            </symbol>
+            <symbol id="i-chart" viewBox="0 0 24 24">
+                <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+                <path d="m19 9-5 5-4-4-3 3" />
+            </symbol>
+            <symbol id="i-bell" viewBox="0 0 24 24">
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+                <path
+                    d="M21 15.5V17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.5a2 2 0 0 1 .6-1.4L5 13.6V8a7 7 0 0 1 14 0v5.6l1.4 1.5a2 2 0 0 1 .6 1.4z" />
+            </symbol>
+            <symbol id="i-party" viewBox="0 0 24 24">
+                <path d="M5.8 11.3 2 22l10.7-3.79" />
+                <path d="M4 3h.01" />
+                <path d="M22 8h.01" />
+                <path d="M15 2h.01" />
+                <path d="M22 20h.01" />
+                <path
+                    d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10" />
+                <path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11-.11.7-.72 1.22-1.43 1.22H17" />
+                <path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7" />
+                <path
+                    d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z" />
+            </symbol>
+            <symbol id="i-sparkles" viewBox="0 0 24 24">
+                <path
+                    d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.14 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z" />
+                <path d="M20 3v4" />
+                <path d="M22 5h-4" />
+                <path d="M4 17v2" />
+                <path d="M5 18H3" />
+            </symbol>
+        </defs>
+    </svg>
+    <!-- animated background -->
+    <div class="bg-fx" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+    </div>
+
+    <!-- ===== Nav ===== -->
+    <header class="nav" id="nav">
+        <div class="wrap nav-inner">
+            <a class="brand" href="#top">
+                <img src="assets/img/logo.png" alt="Dumb or Genius logo" />
+                <span>Dumb or <span class="grad-text">Genius</span></span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#worlds">Worlds</a>
+                <a href="#features">Features</a>
+                <a href="#how">How it works</a>
+                <a href="#safety">Safety</a>
+                <a class="nav-cta" href="#get">Get the app</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+        </div>
+    </header>
+
+    <main id="top">
+        <!-- ===== Hero ===== -->
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div class="hero-copy reveal">
+                    <span class="eyebrow"><svg class="ic" aria-hidden="true">
+                            <use href="#i-brain" />
+                        </svg> Genius &nbsp;&bull;&nbsp; Dumb <svg class="ic" aria-hidden="true">
+                            <use href="#i-smile" />
+                        </svg></span>
+                    <h1>Smart ideas.<br />Dumb ideas.<br /><span class="grad-text">You decide.</span></h1>
+                    <p class="lede">Drop your wildest brainwaves into two worlds, vote on everyone else's, and find out
+                        if the crowd crowns you a genius - or gloriously dumb.</p>
+                    <div class="hero-cta">
+                        <a class="btn btn-primary" href="#get"><svg class="ic" aria-hidden="true">
+                                <use href="#i-rocket" />
+                            </svg> Get the app</a>
+                        <a class="btn btn-ghost" href="#how">See how it works</a>
+                    </div>
+                    <p class="hero-note">Free to play • <b>10 votes a day</b> per world • Two leaderboards to conquer
+                    </p>
+                </div>
+
+                <div class="hero-art reveal">
+                    <span class="floaty f1 c-gold"><svg class="ic" aria-hidden="true">
+                            <use href="#i-bulb" />
+                        </svg></span>
+                    <span class="floaty f2 c-pink"><svg class="ic" aria-hidden="true">
+                            <use href="#i-smile" />
+                        </svg></span>
+                    <span class="floaty f3 c-blue"><svg class="ic" aria-hidden="true">
+                            <use href="#i-brain" />
+                        </svg></span>
+                    <span class="floaty f4 c-gold"><svg class="ic" aria-hidden="true">
+                            <use href="#i-star" />
+                        </svg></span>
+                    <span class="hero-halo" aria-hidden="true"></span>
+                    <img class="hero-logo" src="assets/img/logo.png"
+                        alt="Dumb or Genius brain mascot - half genius, half gloriously dumb" />
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Worlds ===== -->
+        <section id="worlds">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Two worlds, one showdown</span>
+                    <h2>Pick your <span class="grad-text">side</span></h2>
+                    <p>Every idea lives in one of two worlds. Feeds, daily votes, ranks and leaderboards are all kept
+                        separate - so you can be a certified genius <em>and</em> a champion of chaos.</p>
+                </div>
+                <div class="worlds">
+                    <div class="world genius reveal">
+                        <div class="world-ic"><svg class="ic" aria-hidden="true">
+                                <use href="#i-brain" />
+                            </svg></div>
+                        <span class="vibe">Genius mode</span>
+                        <h3>The Genius world</h3>
+                        <p>Clever, useful, this-could-actually-work ideas. The place for brilliant brainwaves that
+                            deserve a round of applause.</p>
+                    </div>
+                    <div class="world dumb reveal">
+                        <div class="world-ic"><svg class="ic" aria-hidden="true">
+                                <use href="#i-smile" />
+                            </svg></div>
+                        <span class="vibe">Dumb mode</span>
+                        <h3>The Dumb world</h3>
+                        <p>Funny, chaotic, so-dumb-it's-genius ideas. Where the worst ideas somehow become the best
+                            entertainment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Features ===== -->
+        <section id="features">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Why it's addictive</span>
+                    <h2>Everything you need to <span class="grad-text">go viral</span> (or flop)</h2>
+                    <p>Simple to play, surprisingly deep. Here's what you get.</p>
+                </div>
+                <div class="features">
+                    <div class="feature reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-bulb" />
+                            </svg></div>
+                        <h3>Post your ideas</h3>
+                        <p>Fire off a title and a punchy description into the Genius or Dumb world. Start with 3 idea
+                            slots per world.</p>
+                    </div>
+                    <div class="feature reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-vote" />
+                            </svg></div>
+                        <h3>Vote every day</h3>
+                        <p>10 votes per world, per day, refreshed automatically. Every tap fires a burst of confetti.
+                        </p>
+                    </div>
+                    <div class="feature reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-flame" />
+                            </svg></div>
+                        <h3>Trending that moves</h3>
+                        <p>Today, this week, this month or all-time. Hot ideas rise fast - keep an eye on the charts.
+                        </p>
+                    </div>
+                    <div class="feature reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-trophy" />
+                            </svg></div>
+                        <h3>Leaderboards</h3>
+                        <p>Top-100 creators per world with a top-3 podium. Rack up votes and claim your spot.</p>
+                    </div>
+                    <div class="feature reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-medal" />
+                            </svg></div>
+                        <h3>Ranks to unlock</h3>
+                        <p>Seven tiers per world based on the votes you earn. Watch your rank badge climb.</p>
+                    </div>
+                    <div class="feature reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-unlock" />
+                            </svg></div>
+                        <h3>Unlock more slots</h3>
+                        <p>Every idea that hits 100 votes earns you an extra idea slot. Big hits mean more room to
+                            create.</p>
+                    </div>
+                    <div class="feature reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-eye" />
+                            </svg></div>
+                        <h3>Browse as a guest</h3>
+                        <p>Scroll the feeds without an account. Sign in with Google or Apple when you're ready to play.
+                        </p>
+                    </div>
+                    <div class="feature reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-shield" />
+                            </svg></div>
+                        <h3>Safe by design</h3>
+                        <p>Report, block, and a profanity filter keep the feed fun. Objectionable content is a hard no.
+                        </p>
+                    </div>
+                    <div class="feature reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-palette" />
+                            </svg></div>
+                        <h3>Delightfully animated</h3>
+                        <p>Playful splash, glowing controls, gradient titles and smooth card animations throughout.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Vote demo ===== -->
+        <section id="demo">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Try it</span>
+                    <h2>Genius or <span class="grad-text">dumb?</span> Cast a vote</h2>
+                    <p>Give it a tap. (Yes, there's confetti - there's always confetti.)</p>
+                </div>
+                <div class="demo reveal">
+                    <div class="idea-card">
+                        <h3><svg class="ic" aria-hidden="true">
+                                <use href="#i-bell" />
+                            </svg>A toaster that texts you when the toast is ready</h3>
+                        <p>No more burnt breakfasts. Peak convenience or peak nonsense?</p>
+                    </div>
+                    <div class="vote-row">
+                        <button class="vote-btn" id="voteBtn"><svg class="ic" aria-hidden="true">
+                                <use href="#i-vote" />
+                            </svg> <span id="voteLabel">Vote</span></button>
+                        <div class="vote-count" id="voteCount">247</div>
+                    </div>
+                    <p style="margin-top:18px;"><small>In the real app you get 10 of these per world, every single
+                            day.</small></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== How it works ===== -->
+        <section id="how">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Dead simple</span>
+                    <h2>How it <span class="grad-text">works</span></h2>
+                    <p>From zero to genius (or gloriously dumb) in four taps.</p>
+                </div>
+                <div class="steps">
+                    <div class="step reveal">
+                        <h3>Pick a world</h3>
+                        <p>Jump into Genius or Dumb - or hop between both.</p>
+                    </div>
+                    <div class="step reveal">
+                        <h3>Post an idea</h3>
+                        <p>A snappy title, a short pitch. Send it out to the crowd.</p>
+                    </div>
+                    <div class="step reveal">
+                        <h3>Vote &amp; explore</h3>
+                        <p>Spend your daily votes on the ideas that make you gasp or giggle.</p>
+                    </div>
+                    <div class="step reveal">
+                        <h3>Climb the ranks</h3>
+                        <p>Earn votes, unlock slots, and rise up the leaderboard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Ranks strip ===== -->
+        <section id="ranks">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Seven tiers per world</span>
+                    <h2>From rookie to <span class="grad-text">legend</span></h2>
+                    <p>The more votes your ideas earn, the higher your rank badge climbs.</p>
+                </div>
+                <div class="ranks reveal">
+                    <span class="rank-pill"><svg class="ic c-green" aria-hidden="true">
+                            <use href="#i-sprout" />
+                        </svg> Newcomer</span>
+                    <span class="rank-pill"><svg class="ic c-blue" aria-hidden="true">
+                            <use href="#i-sparkles" />
+                        </svg> Rising</span>
+                    <span class="rank-pill"><svg class="ic c-pink" aria-hidden="true">
+                            <use href="#i-flame" />
+                        </svg> Notable</span>
+                    <span class="rank-pill"><svg class="ic c-gold" aria-hidden="true">
+                            <use href="#i-star" />
+                        </svg> Popular</span>
+                    <span class="rank-pill"><svg class="ic c-purple" aria-hidden="true">
+                            <use href="#i-rocket" />
+                        </svg> Trending</span>
+                    <span class="rank-pill"><svg class="ic c-gold" aria-hidden="true">
+                            <use href="#i-crown" />
+                        </svg> Elite</span>
+                    <span class="rank-pill"><svg class="ic c-gold" aria-hidden="true">
+                            <use href="#i-trophy" />
+                        </svg> Legend</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Safety ===== -->
+        <section id="safety">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Fun, kept friendly</span>
+                    <h2>Built to be a <span class="grad-text">safe</span> place to be silly</h2>
+                    <p>Big personality, zero tolerance for the nasty stuff.</p>
+                </div>
+                <div class="trust">
+                    <div class="trust-card reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-flag" />
+                            </svg></div>
+                        <h3>Report anything</h3>
+                        <p>Flag content in a tap. Reported ideas vanish from your feed instantly, and repeat offenders
+                            get struck out.</p>
+                    </div>
+                    <div class="trust-card reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-ban" />
+                            </svg></div>
+                        <h3>Block anyone</h3>
+                        <p>Silently block a user and every idea they post disappears from your feeds. Reversible
+                            whenever you like.</p>
+                    </div>
+                    <div class="trust-card reveal">
+                        <div class="fi"><svg class="ic" aria-hidden="true">
+                                <use href="#i-lock" />
+                            </svg></div>
+                        <h3>Your data, your call</h3>
+                        <p>Delete your account anytime. We never sell your data or track you across other apps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA / Get the app ===== -->
+        <section id="get" class="cta">
+            <div class="wrap">
+                <div class="cta-box reveal">
+                    <img class="cta-logo" src="assets/img/logo.png" alt="Dumb or Genius logo" />
+                    <h2>Ready to find out?</h2>
+                    <p>Download Dumb or Genius and let the crowd decide - genius, or gloriously dumb.</p>
+                    <div class="stores">
+                        <!-- TODO: replace href="#" with the App Store URL when live -->
+                        <a class="store-btn" id="appStoreBtn" href="#" aria-disabled="true"
+                            aria-label="Download on the App Store (coming soon)">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M16.365 1.43c0 1.14-.417 2.2-1.11 2.98-.79.9-2.09 1.6-3.29 1.5-.14-1.1.43-2.27 1.11-3.02.79-.86 2.15-1.5 3.29-1.46zM20.7 17.02c-.6 1.39-.9 2-1.67 3.23-1.08 1.72-2.6 3.86-4.49 3.87-1.67.02-2.1-1.09-4.37-1.08-2.27.01-2.75 1.1-4.42 1.09-1.89-.02-3.33-1.95-4.41-3.66-3.02-4.8-3.34-10.43-1.47-13.42 1.32-2.12 3.41-3.36 5.37-3.36 2 0 3.26 1.1 4.91 1.1 1.6 0 2.58-1.1 4.91-1.1 1.76 0 3.62.96 4.95 2.62-4.35 2.38-3.64 8.58.16 10.61z" />
+                            </svg>
+                            <span><span class="st-small">Coming soon to the</span><br /><span class="st-big">App Store
+                                    <span class="soon">Soon</span></span></span>
+                        </a>
+                        <!-- TODO: replace href="#" with the Google Play URL when live -->
+                        <a class="store-btn" id="playStoreBtn" href="#" aria-disabled="true"
+                            aria-label="Get it on Google Play (coming soon)">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M3.6 1.9c-.3.3-.5.7-.5 1.3v17.6c0 .6.2 1 .5 1.3l.1.1L14 12.1v-.2L3.7 1.8l-.1.1zM17.8 15.9l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.3l-3.9 2.1-.1-.1zM14.6 12.7l3.3 3.3-9.2 5.3c-.4.2-.8.2-1.1 0l7-8.6zM7.6 2.6c.3-.2.7-.2 1.1 0l9.2 5.3-3.3 3.3-7-8.6z" />
+                            </svg>
+                            <span><span class="st-small">Coming soon on</span><br /><span class="st-big">Google Play
+                                    <span class="soon">Soon</span></span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div>
+                    <a class="brand" href="#top">
+                        <img src="assets/img/logo.png" alt="Dumb or Genius logo" />
+                        <span>Dumb or <span class="grad-text">Genius</span></span>
+                    </a>
+                    <p>Smart ideas. Dumb ideas. You decide. A playful idea-voting game by Kounga Solutions.</p>
+                </div>
+                <div>
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#worlds">Worlds</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how">How it works</a></li>
+                        <li><a href="#get">Get the app</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal &amp; support</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="mailto:info@koungasolutions.co.nz">info@koungasolutions.co.nz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span id="year">2026</span> Kounga Solutions. All rights reserved.</span>
+                <span>Made with <svg class="ic c-gold" aria-hidden="true">
+                        <use href="#i-bulb" />
+                    </svg> &amp; <svg class="ic c-pink" aria-hidden="true">
+                        <use href="#i-smile" />
+                    </svg> in Aotearoa New Zealand</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
